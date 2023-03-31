@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  consumer:
+    build:
+      context: .
+      target: production
+
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - .:/home/app
+    ports:
+      - '8090:8090'
+
